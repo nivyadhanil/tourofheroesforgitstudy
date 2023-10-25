@@ -1,0 +1,27 @@
+<h2>Software</h2>
+
+<div>
+    <label for="new-hero">Staff name: </label>
+    <input id="new-hero" #heroName />
+  
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button type="button" class="add-button" >
+      Add Staff
+    </button>
+  </div>
+  
+
+
+<ul class="staffs">
+    <li *ngFor="let staff of staffs" (click)="onSelect(staff)">   
+        
+        <a><span class="badge">{{ staff.id }}</span> {{ staff.name }}</a>
+        
+    </li>
+</ul>
+<div *ngIf="selectedStaff">
+     <h2>Name is {{ selectedStaff.name}} and Id is {{ selectedStaff.id }}</h2>
+</div>
+
+<!-- <button type="button" (click)="goBack()">go back</button> -->
+
